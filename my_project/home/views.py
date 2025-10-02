@@ -1,3 +1,5 @@
-from django.shortcuts import render
+# home/views.py
+from django.http import HttpResponse
 
-# Create your views here.
+def index(request):
+    return HttpResponse("Привіт! Це додаток Home.")
