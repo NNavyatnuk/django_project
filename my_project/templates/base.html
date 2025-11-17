@@ -1,16 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{% block title %}MovieZone{% endblock title %}</title>
+    <!-- стилі навбара -->
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <!-- іконки Font Awesome (для лупи, корзини, юзера) -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        referrerpolicy="no-referrer" />
+    {% block styles %}{% endblock styles %}
 </head>
 <body>
-<<<<<<<< HEAD:my_project/templates/home.html
-    <h1>{{ message }}</h1>
-    <p>bla bla bla</p>
-========
-    
->>>>>>>> dev:my_project/templates/base.html
+    {% include 'home/navbar.html' %}
+    {% block content %}{% endblock content %}
+
+    {% block scripts %}{% endblock scripts %}
 </body>
 </html>

@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    background: #050505;
+    z-index: 1000;
+}
+
+/* Ліва частина (логотип) */
+.nav-left h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #e50914;
+}
+
+/* Центр – пошук */
+.nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 5px 10px;
+    gap: 8px;
+    width: 100%;
+    max-width: 320px;
+}
+
+.search input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: #fcfafa;
+    outline: none;
+    padding: 6px 4px;
+    font-size: 14px;
+}
+
+.search button {
+    background: #e50914;
+    border: none;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search button:hover {
+    background: #b20710;
+}
+
+/* Права частина – іконки/лінки */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-right a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-right a:hover,
+.nav-right a.active {
+    color: #e50914;
+}
+
+/* щоб контент не ліз під fixed-navbar */
+.page-content {
+    padding-top: 60px;
+}
