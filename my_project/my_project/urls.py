@@ -4,5 +4,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('shop.urls')),
-    path('account/', include('accounts.urls'))   # підключаємо шляхи з shop/urls.py
+    path('account/', include('accounts.urls'))   
 ]
