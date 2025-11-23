@@ -1,10 +1,3 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
-}
-
 /* NAVBAR */
 .navbar {
     position: fixed;
@@ -19,47 +12,48 @@ body {
     justify-content: space-between;
     gap: 24px;
 
-    background: #050505;
+    /* напівпрозора панель на градієнті */
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.4);
     z-index: 1000;
 }
 
-/* Ліва частина (логотип) */
+/* логотип у фіолетовому стилі */
 .nav-left h1 {
     margin: 0;
     font-size: 26px;
-    color: #e50914;
+    font-weight: 700;
+    background: linear-gradient(120deg, #ffffff, #e5d9ff);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 /* Центр – пошук */
-.nav-center {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
 .search {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.9);
     border-radius: 30px;
     padding: 5px 10px;
     gap: 8px;
     width: 100%;
     max-width: 320px;
+    border: 1px solid rgba(148, 163, 184, 0.45);
 }
 
 .search input {
     flex: 1;
     border: none;
     background: transparent;
-    color: #fcfafa;
+    color: #e5e7eb;
     outline: none;
     padding: 6px 4px;
     font-size: 14px;
 }
 
 .search button {
-    background: #e50914;
+    background: linear-gradient(135deg, var(--bg-from), var(--accent));
     border: none;
     color: #fff;
     width: 32px;
@@ -72,27 +66,38 @@ body {
 }
 
 .search button:hover {
-    background: #b20710;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+}
+
+/* Права частина – іконки/лінки */
+.nav-right a {
+    color: #e5e7eb;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 /* Права частина – іконки/лінки */
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 18px;   /* відстань між іконками, можеш змінити */
 }
 
 .nav-right a {
-    color: #fff;
-    font-size: 18px;
+    color: #e5e7eb;
+    font-size: 20px;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .nav-right a:hover,
 .nav-right a.active {
-    color: #e50914;
+    color: var(--accent);
 }
+
+
+
 
 /* щоб контент не ліз під fixed-navbar */
 .page-content {
