@@ -170,7 +170,7 @@ getEllementById()
 
     
    // Back to top button
-   $(window).scroll(function () {
+    $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
         $('.back-to-top').fadeIn('slow');
     } else {
@@ -183,7 +183,7 @@ getEllementById()
     });
 
 
-   
+
 
 })(jQuery);
 
