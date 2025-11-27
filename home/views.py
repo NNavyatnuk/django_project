@@ -13,8 +13,8 @@ def cart_page(request):
 def bestseller_page(request):
     return render(request, 'shopping/bestseller.html')
 
-def error_404_page(request):
-    return render(request, 'shopping/404.html')
-
 def single_page(request):
     return render(request, 'shopping/single.html')
+
+def error_404_page(request):
+    return render(request, 'shopping/404.html', status=404)
