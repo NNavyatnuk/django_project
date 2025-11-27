@@ -7,7 +7,7 @@ document.addEventListener('visibilitychange', () => {
     }
 }
 );
-getEllementById()
+
 (function ($) {
     "use strict";
 
@@ -19,7 +19,7 @@ getEllementById()
             }
         }, 1);
     };
-    spinner(0);
+    spinner();
     
     
     // Initiate the wowjs
