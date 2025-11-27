@@ -7,7 +7,7 @@ document.addEventListener('visibilitychange', () => {
     }
 }
 );
-getEllementById()
+
 (function ($) {
     "use strict";
 
@@ -19,7 +19,7 @@ getEllementById()
             }
         }, 1);
     };
-    spinner(0);
+    spinner();
     
     
     // Initiate the wowjs
@@ -170,7 +170,7 @@ getEllementById()
 
     
    // Back to top button
-   $(window).scroll(function () {
+    $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
         $('.back-to-top').fadeIn('slow');
     } else {
@@ -183,7 +183,7 @@ getEllementById()
     });
 
 
-   
+
 
 })(jQuery);
 
