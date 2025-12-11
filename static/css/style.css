@@ -1,6 +1,21 @@
 
 /*** Spinner Start ***/
 /*** Spinner ***/
+:root {
+    --primary-color: #00a000;
+    --accent-color: #00a000;
+    --button-color: #f94b5f;
+    --bs-primary: #00a000;    
+    --bs-secondary: #006600;    
+    --bs-success: #00a000;
+    --bs-info: #00a000;
+    --bs-warning: #00a000;
+    --bs-danger: #006600;
+    --bg-primary: #437033;
+}
+
+
+
 #spinner {
     opacity: 0;
     visibility: hidden;
