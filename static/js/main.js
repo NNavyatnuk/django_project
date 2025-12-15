@@ -8,6 +8,8 @@ document.addEventListener('visibilitychange', () => {
 }
 );
 
+page_title = document.querySelectorAll('.text-center.text-white.display-6.wow.fadeInUp').innerText = "Добро пожаловать в Huod Market!";
+
 (function ($) {
     "use strict";
 

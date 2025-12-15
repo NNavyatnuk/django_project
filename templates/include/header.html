@@ -39,23 +39,26 @@
                         <a href="#" class="dropdown-toggle text-muted mx-2" data-bs-toggle="dropdown"><small>
                                 English</small></a>
                         <div class="dropdown-menu rounded">
-                            <a href="#" class="dropdown-item"> English</a>
-                            <a href="#" class="dropdown-item"> Turkish</a>
-                            <a href="#" class="dropdown-item"> Spanol</a>
-                            <a href="#" class="dropdown-item"> Italiano</a>
+                            <a class="dropdown-item"> Більше нема!</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <a href="#" class="dropdown-toggle text-muted ms-2" data-bs-toggle="dropdown"><small><i
                                     class="fa fa-home me-2"></i> My Dashboard</small></a>
                         <div class="dropdown-menu rounded">
-                            <a href="#" class="dropdown-item font-title"> Login</a>
+                            {% if not user.is_authenticated %}
+                                <a href="{% url 'login' %}" class="dropdown-item font-title"> Login</a>
+                                <a href="{% url 'register_user' %}" class="dropdown-item font-title"> Register</a>
+                            {% else %}
+                                <a href="{% url 'logout' %}" class="dropdown-item"> Log Out</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item"> My Account</a>
+                            {% endif %}
                             <a href="#" class="dropdown-item"> Wishlist</a>
                             <a href="#" class="dropdown-item"> My Card</a>
                             <a href="#" class="dropdown-item"> Notifications</a>
                             <a href="#" class="dropdown-item"> Account Settings</a>
-                            <a href="#" class="dropdown-item"> My Account</a>
-                            <a href="#" class="dropdown-item"> Log Out</a>
+                            
+                            
                         </div>
                     </div>
                 </div>
@@ -151,10 +154,9 @@
                 </nav>
             </div>
             <div class="col-12 col-lg-9">
-                <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
+                <nav class="navbar navbar-expand-lg navbar-light text-primary ">
                     <a href="" class="navbar-brand d-block d-lg-none">
-                        <h1 class="display-5 text-secondary m-0"><i
-                                class="fas fa-shopping-bag text-white me-2"></i>Huod</h1>
+                        <h1 class="display-5 text-secondary m-0"><img src="{% static 'images/favicon.png' %}" width="50" height="50" alt="Logo">Huod</h1>
                         <!-- <img src="img/logo.png" alt="Logo"> -->
                     </a>
                     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
@@ -226,9 +228,9 @@
     <!-- Navbar & Hero End -->
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
-        <h1 class="text-center text-white display-6 wow fadeInUp" data-wow-delay="0.1s">Название страницы</h1>
+        <h1 class="text-center text-white display-6 wow fadeInUp" data-wow-delay="0.1s">{{ page_title }}</h1>
         <ol class="breadcrumb justify-content-center mb-0 wow fadeInUp" data-wow-delay="0.3s">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Pages</a></li>
             <li class="breadcrumb-item active text-white">Single Product</li>
         </ol>

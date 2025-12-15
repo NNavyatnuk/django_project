@@ -10,5 +10,6 @@ urlpatterns = [
     path('login_user', login_user, name='login'),
     path('logout_user', logout_user, name='logout'),
     path('register_user', register_user, name='register_user'),
+    path('profile', profile_page, name='profile'),
     re_path(r'^.*$', error_404_page, name='404'),
 ]
