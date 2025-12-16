@@ -1,0 +1,328 @@
+/* ========= GLOBAL ========= */
+:root {
+    /* градієнт як на формі */
+    --bg-from: #7056b2;   /* фіолетовий */
+    --bg-to:   #6972d9;   /* синюватий */
+
+    --accent:       #7c3aed; /* фіолетовий акцент */
+    --accent-hover: #5b21b6;
+
+    --text-on-dark: #f9fafb;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    /* фон як на формі реєстрації */
+    background: linear-gradient(135deg, var(--bg-from), var(--bg-to));
+    color: var(--text-on-dark);
+}
+
+/* ========= BANNER / SLIDER ========= */
+.banner {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+
+    /* «карта» по центру */
+    max-width: 1200px;
+    margin: 80px auto 40px;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.4);
+
+    background: linear-gradient(135deg, var(--bg-from), var(--bg-to));
+}
+
+#banner-slider {
+    display: flex;
+    height: 100%;
+    width: 400%;
+    transition: transform 1s ease-in-out;
+}
+
+.banner-slide {
+    flex: 0 0 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.banner-content {
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    max-width: 600px;
+    z-index: 2;
+    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.8);
+}
+
+.banner-content h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.banner-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.banner-content button {
+    padding: 10px 24px;
+    background: linear-gradient(90deg, var(--bg-from), var(--accent));
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.banner-content button:hover {
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+}
+
+/* ========= MOVIES SECTION ========= */
+.movies-section {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+}
+
+.movies-section h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.movies-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+}
+
+/* scroll */
+.movies-row::-webkit-scrollbar {
+    height: 8px;
+}
+
+.movies-row::-webkit-scrollbar-thumb {
+    background: rgba(249, 250, 251, 0.25);
+    border-radius: 4px;
+}
+
+/* ========= MOVIE CARD ========= */
+.movie-card {
+    /* margin-left: 10px; */
+    scroll-behavior: smooth;
+    width: 200px;
+    height: 300px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.movies-row {
+      display: flex;
+      overflow-x: auto;
+      gap: 40px;
+      padding-bottom: 10px;
+      scroll-behavior: smooth;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.movie-card:hover {
+    transform: translateY(-4px) ;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(15, 23, 42, 0.85);
+}
+
+.movie-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    color: #fff;
+
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.6) 40%,
+        rgba(0, 0, 0, 0.85) 100%
+    );
+
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.movie-card:hover .movie-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.movies-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.movies-section {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.movies-section::-webkit-scrollbar {
+  display: none; /* скрываем скроллбар */
+}
+
+.movie-card {
+  min-width: 200px;
+  height: 300px;
+  background: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* бейджі в акцентних кольорах */
+.badges {
+    margin-bottom: 6px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.badges span {
+    background: rgba(124, 58, 237, 0.18);
+    padding: 4px 8px;
+    margin-right: 6px;
+    border-radius: 999px;
+    font-size: 12px;
+    border: 1px solid rgba(129, 140, 248, 0.5);
+}
+
+/* ========= MODAL ========= */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-close {
+    position: absolute;
+    left: -18px;
+    top: 100%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #7c3aed;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    pointer-events: auto;
+    transition: background 0.45s;
+}
+
+.modal-close:hover { 
+    background: #5b21b6;
+}
+
+.modal-content {
+    background: radial-gradient(circle at top left, #1f2937, #020617);
+    border-radius: 20px;
+    max-width: 800px;
+    width: 90%;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.9);
+}
+
+.modal-content img {
+    width: 325px;
+    border-radius: 16px;
+}
+
+.modal-details {
+    flex: 1;
+    min-width: 250px;
+}
+
+.modal-details h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.modal-details .rating {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.modal-details .price {
+    color: #fde68a;
+    margin-bottom: 15px;
+}
+
+.modal-details .description {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.modal-details .info {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.modal-details .buttons {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    background: #7c3aed; /*linear-gradient(135deg, var(--bg-from), var(--accent))*/
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.45s;
+}
+
+button:hover {
+    background: #5b21b6; /*linear-gradient(135deg, var(--accent), var(--accent-hover))*/
+}

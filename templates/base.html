@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}MovieZone{% endblock title %}</title>
+    <!-- стилі навбара -->
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <!-- стилі футера -->
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+     <!-- стилі корзини -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        referrerpolicy="no-referrer" />
+        <script src="{% static 'java/home.js' %}" defer></script>
+    {% block styles %}{% endblock styles %}
+</head>
+<body>
+        {% include 'home/navbar.html' %}
+    {% block content %}{% endblock content %}
+
+    {% block scripts %}{% endblock scripts %}
+
+    {% block footer %}
+        {% include 'home/footer.html' %}
+    {% endblock footer %}
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    /* напівпрозора панель на градієнті */
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+    z-index: 1000;
+}
+
+/* логотип у фіолетовому стилі */
+.nav-left h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    background: linear-gradient(120deg, #ffffff, #e5d9ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Центр – пошук */
+.search {
+    display: flex;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 30px;
+    padding: 5px 10px;
+    gap: 8px;
+    width: 100%;
+    max-width: 320px;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+}
+
+.search input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: #e5e7eb;
+    outline: none;
+    padding: 6px 4px;
+    font-size: 14px;
+}
+
+.search button {
+    background: linear-gradient(135deg, var(--bg-from), var(--accent));
+    border: none;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search button:hover {
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+}
+
+/* Права частина – іконки/лінки */
+.nav-right a {
+    color: #e5e7eb;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Права частина – іконки/лінки */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;   /* відстань між іконками, можеш змінити */
+}
+
+.nav-right a {
+    color: #e5e7eb;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-right a:hover,
+.nav-right a.active {
+    color: var(--accent);
+}
+
+
+
+
+/* щоб контент не ліз під fixed-navbar */
+.page-content {
+    padding-top: 60px;
+}

@@ -1,0 +1,30 @@
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+{% endblock styles %}
+
+<nav class="navbar">
+    <!-- Лого зліва -->
+    <div class="nav-left">
+        <h1>MovieZone</h1>
+    </div>
+
+    <!-- Пошукач по центру -->
+    <div class="nav-center">
+        <div class="search">
+            <input id="searchbox" type="text" placeholder="Пошук фільмів..." />
+            <button id="search-btn" aria-label="Пошук">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Іконки/посилання справа -->
+    <div class="nav-right nav-links">
+        <a href="#" class="active"><i class="fa-solid fa-house"></i></a>
+        <a href="#" class="basket-nav-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="{% url 'login' %}"><i class="fa-solid fa-circle-user"></i></a>
+    </div>
+</nav>
