@@ -132,7 +132,6 @@ body {
 }
 
 .movies-row {
-      display: flex;
       overflow-x: auto;
       gap: 40px;
       padding-bottom: 10px;
@@ -186,7 +185,6 @@ body {
 }
 
 .movies-section {
-  display: flex;
   gap: 10px;
   overflow-x: auto;
   scroll-behavior: smooth;
