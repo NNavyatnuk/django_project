@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}MovieZone - Найкращі фільми{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="{% static 'java/home.js' %}"></script>
+{% endblock styles %}
+
+{% block content %}
+
+    <!-- Банер (слайдер) -->
+    <div class="banner">
+        <div class="banner-slider" id="banner-slider">
+            <div class="banner-slide" style="background-image:url('https://i.ibb.co/QMJ0R8S/banner.jpg')">
+                <div class="banner-content">
+                    <h2>Топ фільми тижня</h2>
+                    <p>Самі захоплюючі сюжети, котрі ви не зможете забути.</p>
+                    <button>Смотреть</button>
+                </div>
+            </div>
+            <div class="banner-slide" style="background-image:url('https://i.ibb.co/DQx2gS3/movie1.jpg')">
+                <div class="banner-content">
+                    <h2>Фільм 1</h2>
+                    <p>...</p>
+                    <button>Дивитись</button>
+                </div>
+            </div>
+            <div class="banner-slide" style="background-image:url('https://i.ibb.co/F6mM3FP/movie2.jpg')">
+                <div class="banner-content">
+                    <h2>Фільм 2</h2>
+                    <p>...</p>
+                    <button>Дивитись</button>
+                </div>
+            </div>
+            <div class="banner-slide" style="background-image:url('https://i.ibb.co/2K0qk9J/movie3.jpg')">
+                <div class="banner-content">
+                    <h2>Фільм 3</h2>
+                    <p>....</p>
+                    <button>Дивитись</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Секції фільмів -->
+    <div class="movies-section">
+        <h3>Рекомендації</h3>
+        <div class="movies-row">
+            <!-- movie-card 1 -->
+            <div class="movie-card"
+                data-title="УХ НАЗАРКА"
+                data-rating="8.5"
+                data-price="299 $"
+                data-genre="Боевик, Приключения"
+                data-year="2024"
+                data-actors="Джон Смит, Назар, Эми Ли"
+                data-director="Стив черный"
+                data-description="Захватывающий боевик о герое, который спасает мир от катастрофы."
+                data-poster="https://images.kinorium.com/movie/shot/317367/h280_44765326.jpg?21601853513">
+                <img src="https://images.kinorium.com/movie/shot/317367/h280_44765326.jpg?21601853513" alt="">
+                <div class="movie-info">
+                    <div class="badges">
+                        <span>Боевик</span>
+                        <span>2ч 10м</span>
+                    </div>
+                    <div>УХ НАЗАРКА</div>
+                </div>
+            </div>
+
+            <!-- movie-card 2 -->
+            <div class="movie-card"
+                data-title="ЕЙ ЧУВВАКК"
+                data-rating="7.9"
+                data-price="249 $"
+                data-genre="Комедия"
+                data-year="2023"
+                data-actors="Майк Джонсон, Эми Ли"
+                data-director="Томас Грин"
+                data-description="Легкая комедия о дружбе и приключениях в большом городе."
+                data-poster="https://i.ytimg.com/vi/s_TekJFWTeI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB6tMUYwSER91Y4XUHIw-5vAuATUw">
+                <img src="https://i.ytimg.com/vi/s_TekJFWTeI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB6tMUYwSER91Y4XUHIw-5vAuATUw" alt="">
+                <div class="movie-info">
+                    <div class="badges">
+                        <span>Комедия</span>
+                        <span>1ч 45м</span>
+                    </div>
+                    <div>ЕЙ ЧУВВАКК</div>
+                </div>
+            </div>
+
+            <!-- movie-card 3 -->
+            <div class="movie-card"
+                data-title="Зеленый слоник"
+                data-rating="8.1"
+                data-price="199 $"
+                data-genre="Драма"
+                data-year="2022"
+                data-actors="Андрей , Павел Дуров"
+                data-director="Олег"
+                data-description="Эмоциональная драма о судьбах людей."
+                data-poster="data:image/jpeg;base64,...">
+                <img src="data:image/jpeg;base64,..." alt="">
+                <div class="movie-info">
+                    <div class="badges">
+                        <span>Драма</span>
+                        <span>2ч 5м</span>
+                    </div>
+                    <div>Зеленый слоник</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модалка -->
+    <div class="modal" id="movieModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <img id="modalPoster" src="" alt="Poster">
+            <div class="modal-details">
+                <h2 id="modalTitle"></h2>
+                <div class="rating" id="modalRating"></div>
+                <div class="price" id="modalPrice"></div>
+                <div class="description" id="modalDescription"></div>
+                <div class="info" id="modalInfo"></div>
+                <div class="buttons">
+                    <button>Смотреть</button>
+                    <button class="small">❤️ В избранное</button>
+                    <button class="small">🛒 В покупки</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock scripts %}
