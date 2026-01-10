@@ -155,7 +155,7 @@
 
 .nav-bar .categories-bars .categories-bars-item a,
 .nav-bar .categories-bars .categories-bars-item span {
-    color: var(--bs-dark);
+    color: red;
     transition: 0.5s;
 }
 

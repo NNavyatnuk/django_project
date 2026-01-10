@@ -1,14 +1,14 @@
-document.title = "Привет!";
+document.title = "MovieZone - Лучшие фильмы здесь!";
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-        document.title = "Возвращайся!";
+        document.title = "Возвращайся!⚡";
     } else {
-        document.title = "Привет!";
+        document.title = "MovieZone - Лучшие фильмы здесь!";
     }
 }
 );
 
-page_title = document.querySelectorAll('.text-center.text-white.display-6.wow.fadeInUp').innerText = "Добро пожаловать в Huod Market!";
+page_title = document.querySelectorAll('.text-center.text-white.display-6.wow.fadeInUp').innerText = "Hello, World!";
 
 (function ($) {
     "use strict";

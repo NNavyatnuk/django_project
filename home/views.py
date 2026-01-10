@@ -15,9 +15,10 @@ def login_user(request):
         else:
             messages.success(request, ("There Was An Error login In, Try Again..."))
             return redirect('login')
-    
     else:
-        return render(request, 'members/login.html', {}, context={'page_title': 'Login'})
+            return render(request, 'members/login.html', {
+                'page_title': 'Login'
+            })
 
 def logout_user(request):
     logout(request)
@@ -40,8 +41,9 @@ def register_user(request):
     else:
         form = UserCreationForm()
     return render(request, 'members/register_user.html', {
-        'form':form,
-    }, context={'page_title': 'Register'})
+        'form': form,
+        'page_title': 'Register',
+    })
 
 # Create your views here.
 def home_page(request):

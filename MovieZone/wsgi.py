@@ -1,5 +1,5 @@
 """
-WSGI config for Huod_Market project.
+WSGI config for MovieZone project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Huod_Market.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MovieZone.settings')
 
 application = get_wsgi_application()
